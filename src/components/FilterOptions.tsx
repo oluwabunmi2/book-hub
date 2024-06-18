@@ -1,11 +1,24 @@
 
 import React, { useState } from 'react';
-import { Box, TextField, MenuItem, Button } from '@mui/material';
+import { Box, TextField, MenuItem, Button } from '@mui/material'; 
 
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 interface FilterOptionsProps {
   setFilter: React.Dispatch<React.SetStateAction<string>>;
 }
-
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#1976d2',
+    },
+    secondary: {
+      main: '#dc004e',
+    },
+  },
+  typography: {
+    fontFamily: 'Roboto, sans-serif',
+  },
+});
 const genres = ['Fiction', 'Non-fiction', 'Science Fiction', 'Fantasy', 'Mystery'];
 
 const FilterOptions: React.FC<FilterOptionsProps> = ({ setFilter }) => {
@@ -16,7 +29,8 @@ const FilterOptions: React.FC<FilterOptionsProps> = ({ setFilter }) => {
   };
 
   return (
-    <Box display="flex" justifyContent="space-between" alignItems="center" mb={3}>
+    <ThemeProvider theme={theme}>
+<Box display="flex" justifyContent="space-between" alignItems="center" mb={3}>
       <TextField
         select
         label="Genre"
@@ -35,6 +49,8 @@ const FilterOptions: React.FC<FilterOptionsProps> = ({ setFilter }) => {
         Apply Filter
       </Button>
     </Box>
+    </ThemeProvider>
+    
   );
 };
 

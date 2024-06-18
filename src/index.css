@@ -8,7 +8,8 @@ body, html {
 
 .app {
   padding: 20px;
-  background-color: #f0f0f0;
+  background-color: #7c676b;
+  
   min-height: 100vh;
 }
 
@@ -27,7 +28,7 @@ h1 {
   border: 1px solid #ccc;
   border-radius: 8px;
   padding: 10px;
-  background-color: #fff;
+  background-color: #bdc5c7;
   transition: transform 0.2s ease-in-out;
 }
 
@@ -52,7 +53,7 @@ h1 {
   margin-right: 10px;
   padding: 10px;
   font-size: 1rem;
-  border: 1px solid #ccc;
+  border: 1px solid #90b8e3;
   border-radius: 4px;
 }
 

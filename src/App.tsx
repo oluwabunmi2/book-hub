@@ -6,6 +6,7 @@ import SortSelector from './components/SortSelector';
 import NavBar from './components/NavBar';
 import { Genre } from './hooks/useGenres';
 import { Platform } from './hooks/useBooks';
+import { BookProvider } from './context/BookContext';
 
 
 export interface BookQuery {
@@ -16,9 +17,9 @@ export interface BookQuery {
 }
 
 const App: React.FC = () => {
-  const [searchQuery, setSearchQuery] = useState('');
-  const [filter, setFilter] = useState('');
-  const [sortOrder, setSortOrder] = useState('');
+  const [, setSearchQuery] = useState('');
+  const [, setFilter] = useState('');
+  const [, setSortOrder] = useState('');
 
   const handleSearch = (searchText: string) => {
     setSearchQuery(searchText);
@@ -29,7 +30,10 @@ const App: React.FC = () => {
       <NavBar onSearch={handleSearch} />
       <FilterOptions setFilter={setFilter} />
       <SortSelector setSortOrder={setSortOrder} />
-      <BookList searchQuery={searchQuery} filter={filter} sortOrder={sortOrder} />
+      <BookProvider children={undefined}>
+        
+      </BookProvider>
+    
     </div>
   );
 };
