@@ -9,9 +9,13 @@ body, html {
 .app {
   padding: 20px;
   background-color: #7c676b;
+  background-image: url('src/assets/Book5.jpg'); /* Replace with your image path */
+  background-size: cover; /* Ensures the image covers the entire background */
+  background-position: center; /* Centers the image horizontally and vertically */
   
   min-height: 100vh;
 }
+
 
 h1 {
   font-size: 2rem;
