@@ -5,7 +5,7 @@ const bookRoutes = require('./src/routes/books');
 const app = express();
 
 const PORT = process.env.PORT || 5000;
-const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:5173/book-hub';
+const MONGO_URI = process.env.MONGO_URI || 'mongodb://localhost:27017/book-hub';
 
 // Middleware
 app.use(express.json());
